@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Cool Subs</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <p><label for="name">Name: <label>
+        <input type="text" name="name" id="name" v-model="name" placeholder = "Name">
+        <p class="validate">{{nameValidate}}</p>
+  </p>
+  <p>
+    <label for="email">Email Address: <label>
+        <input type="text" name="email" id="email" v-model="email" placeholder = "Email">
+        <p class="validate">{{emailValidate}}</p>
+  </p>
+  <p>
+    <input type="submit" value="Submit" v-on:click="check">
+    <p>{{submit}}</p>
+  </p>
+</div>
+  <div class="cdenmes" v-for = "cdenmes in cdenmes" v-on:click = "cdenmes.flipped = !cdenmes.flipped">
+    <div class="top" v-bind:class = "cdenmes.data">
+    </div>  
+  <div class="s1" v-bind:class = {hide:cdenmes.flipped}>
+      <h1>{{cdenmes.name}}</h1>
+    </div>
+    <div class="s2" v-bind:class = {hide:!cdenmes.flipped}>
+      <h1>{{cdenmes.codename}}</h1>
+    </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
